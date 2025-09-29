@@ -1,0 +1,74 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<head>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #f0f0f0, #d4e0f0);
+            color: #333;
+            text-align: center;
+        }
+
+        h1 {
+            background-color: #4a90e2;
+            color: white;
+            padding: 40px 20px;
+            font-size: 2em;
+            overflow: hidden;
+        }
+
+        .video-section {
+            margin-top: 30px;
+        }
+
+        .video-container {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #222;
+            color: #fff;
+        }
+
+    </style>
+</head>
+<body>
+
+        <h1 id="animated-header">Welcome to My Page 🎵</h1>
+
+    <main>
+        <section class="video-section">
+            <h2>One of My Favorite Songs</h2>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/TFHCew8DnC0?si=7PKoVngytJimjOb4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </section>
+    </main>
+
+
+    <script>
+        // Simple looping animation on header
+        let header = document.getElementById('animated-header');
+        let hue = 0;
+
+        function animateHeader() {
+            hue = (hue + 1) % 360;
+            header.style.backgroundColor = `hsl(${hue}, 70%, 50%)`;
+            requestAnimationFrame(animateHeader);
+        }
+
+        animateHeader();
+
+    </script>
+</body>
+</html>
